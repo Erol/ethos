@@ -15,6 +15,16 @@ module Ethos
       end
     end
 
+    def initialize(attributes)
+      @attributes = {}
+
+      attributes.each do |k, v|
+        send :"#{k}=", v
+      end
+
+      super()
+    end
+
     def attributes
       @attributes
     end
