@@ -19,7 +19,7 @@ module Ethos
       @attributes = {}
 
       attributes.each do |k, v|
-        send :"#{k}=", v
+        send :"#{k}=", v if respond_to? k
       end
 
       super()

@@ -13,3 +13,9 @@ spec '.new assigns existing attributes' do
 
   assert entity.attributes[:name], :==, 'Apple'
 end
+
+spec '.new does not assign non-existing attributes' do
+  entity = Entity.new none: 'None'
+
+  refute entity.attributes[:none]
+end
