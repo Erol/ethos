@@ -23,3 +23,9 @@ spec '.new does not assign non-existing attributes' do
 
   refute entity.attributes[:none]
 end
+
+spec '.attribute creates an attribute getter' do
+  entity = Entity.new name: 'Apple'
+
+  assert entity.name, :==, 'Apple'
+end
