@@ -29,3 +29,10 @@ spec '.attribute creates an attribute getter' do
 
   assert entity.name, :==, 'Apple'
 end
+
+spec '.attribute creates an attribute setter' do
+  entity = Entity.new
+  entity.name = 'Apple'
+
+  assert entity.name, :==, 'Apple'
+end
