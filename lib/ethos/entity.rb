@@ -15,7 +15,7 @@ module Ethos
       end
     end
 
-    def initialize(attributes)
+    def initialize(attributes = {})
       @attributes = {}
 
       attributes.each do |k, v|

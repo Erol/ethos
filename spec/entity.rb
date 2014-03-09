@@ -8,6 +8,10 @@ end
 
 subject Ethos::Entity
 
+spec '.new allows no given attributes' do
+  Entity.new
+end
+
 spec '.new assigns existing attributes' do
   entity = Entity.new name: 'Apple'
 
