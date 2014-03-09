@@ -1,5 +1,7 @@
+require 'ethos/entity'
+
 class Entity
-  include Sephiria::Entity
+  prepend Ethos::Entity
 
   attribute :name
 end
