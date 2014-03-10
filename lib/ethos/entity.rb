@@ -1,7 +1,7 @@
 module Ethos
   module Entity
     module ClassMethods
-      def attribute(attr, cast = nil)
+      def attribute(attr, options = {})
         reader = :"#{attr}"
         writer = :"#{attr}="
 
@@ -12,13 +12,19 @@ module Ethos
         define_method writer do |value|
           attributes[attr] = value
         end
+
+        defaults[attr] = options[:default] if options[:default]
+      end
+
+      def defaults
+        @_defaults ||= {}
       end
     end
 
     def initialize(attributes = {})
       @attributes = {}
 
-      attributes.each do |k, v|
+      self.class.defaults.merge(attributes).each do |k, v|
         send :"#{k}=", v if respond_to? k
       end
 

@@ -6,6 +6,12 @@ class Entity
   attribute :name
 end
 
+class EntityWithDefault
+  prepend Ethos::Entity
+
+  attribute :name, default: 'Apple'
+end
+
 subject Ethos::Entity
 
 spec '.new allows no given attributes' do
@@ -41,4 +47,10 @@ spec '.attribute creates an attribute with no default value' do
   entity = Entity.new
 
   assert entity.name, :nil?
+end
+
+spec '.attribute creates an attribute with a default value' do
+  entity = EntityWithDefault.new
+
+  assert entity.name, :==, 'Apple'
 end
