@@ -36,3 +36,9 @@ spec '.attribute creates an attribute setter' do
 
   assert entity.name, :==, 'Apple'
 end
+
+spec '.attribute creates an attribute with no default value' do
+  entity = Entity.new
+
+  assert entity.name, :nil?
+end
