@@ -22,8 +22,6 @@ module Ethos
     end
 
     def initialize(attributes = {})
-      @_attributes = {}
-
       self.class.defaults.merge(attributes).each do |k, v|
         send :"#{k}=", v if respond_to? k
       end
@@ -32,7 +30,7 @@ module Ethos
     end
 
     def attributes
-      @_attributes
+      @_attributes ||= {}
     end
 
     def self.prepended(base)
