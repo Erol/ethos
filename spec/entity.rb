@@ -32,27 +32,29 @@ scope '.new' do
   end
 end
 
-spec '.attribute creates an attribute getter' do
-  entity = Entity.new name: 'Apple'
+scope '.attribute' do
+  spec 'creates an attribute getter' do
+    entity = Entity.new name: 'Apple'
 
-  assert entity.name, :==, 'Apple'
-end
+    assert entity.name, :==, 'Apple'
+  end
 
-spec '.attribute creates an attribute setter' do
-  entity = Entity.new
-  entity.name = 'Apple'
+  spec 'creates an attribute setter' do
+    entity = Entity.new
+    entity.name = 'Apple'
 
-  assert entity.name, :==, 'Apple'
-end
+    assert entity.name, :==, 'Apple'
+  end
 
-spec '.attribute creates an attribute with no default value' do
-  entity = Entity.new
+  spec 'creates an attribute with no default value' do
+    entity = Entity.new
 
-  assert entity.name, :nil?
-end
+    assert entity.name, :nil?
+  end
 
-spec '.attribute creates an attribute with a default value' do
-  entity = EntityWithDefault.new
+  spec 'creates an attribute with a default value' do
+    entity = EntityWithDefault.new
 
-  assert entity.name, :==, 'Apple'
+    assert entity.name, :==, 'Apple'
+  end
 end
