@@ -14,20 +14,22 @@ end
 
 subject Ethos::Entity
 
-spec '.new allows no given attributes' do
-  Entity.new
-end
+scope '.new' do
+  spec 'allows no given attributes' do
+    Entity.new
+  end
 
-spec '.new assigns existing attributes' do
-  entity = Entity.new name: 'Apple'
+  spec 'assigns existing attributes' do
+    entity = Entity.new name: 'Apple'
 
-  assert entity.attributes[:name], :==, 'Apple'
-end
+    assert entity.attributes[:name], :==, 'Apple'
+  end
 
-spec '.new does not assign non-existing attributes' do
-  entity = Entity.new none: 'None'
+  spec 'does not assign non-existing attributes' do
+    entity = Entity.new none: 'None'
 
-  refute entity.attributes[:none]
+    refute entity.attributes[:none]
+  end
 end
 
 spec '.attribute creates an attribute getter' do
