@@ -1,25 +1,5 @@
 # Ethos
 
-TODO: Write a gem description
-
-## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'ethos'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install ethos
-
-## Usage
-
-TODO: Write usage instructions here
-
 ## Contributing
 
 1. Fork it ( http://github.com/<my-github-username>/ethos/fork )
