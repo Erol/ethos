@@ -1,4 +1,4 @@
-require "ethos/version"
+require 'ethos/version'
 
 module Ethos
 end
