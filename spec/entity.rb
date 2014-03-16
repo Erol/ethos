@@ -58,3 +58,9 @@ scope '.attribute' do
     assert entity.name, :==, 'Apple'
   end
 end
+
+scope '.attributes' do
+  spec 'returns all defined attributes' do
+    assert Entity.attributes, :include?, :name
+  end
+end

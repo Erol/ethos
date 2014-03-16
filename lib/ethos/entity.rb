@@ -13,7 +13,12 @@ module Ethos
           attributes[attr] = value
         end
 
+        attributes << attr
         defaults[attr] = options[:default] if options[:default]
+      end
+
+      def attributes
+        @_attributes ||= []
       end
 
       def defaults
