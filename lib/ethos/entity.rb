@@ -14,6 +14,7 @@ module Ethos
         end
 
         attributes << attr
+
         defaults[attr] = options[:default] if options[:default]
       end
 
