@@ -64,3 +64,9 @@ scope '.attributes' do
     assert Entity.attributes, :include?, :name
   end
 end
+
+scope '.defaults' do
+  spec 'returns all default attributes' do
+    assert EntityWithDefault.defaults, :==, {name: 'Apple'}
+  end
+end
