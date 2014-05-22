@@ -8,7 +8,7 @@ module Ethos
         writer = :"#{attr}="
 
         define_method reader do
-          Ethos::Type.cast attributes[attr], type
+          attributes[attr] and Ethos::Type.cast attributes[attr], type
         end
 
         define_method writer do |value|

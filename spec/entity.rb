@@ -77,6 +77,12 @@ scope '.attribute' do
     assert entity.name, :==, '1'
     assert entity.name, :is_a?, String
   end
+
+  spec 'creates an attribute with a given type and no default value' do
+    entity = EntityWithType.new
+
+    assert entity.name, :==, nil
+  end
 end
 
 scope '.attributes' do
