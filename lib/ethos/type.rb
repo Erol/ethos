@@ -1,6 +1,7 @@
 module Ethos
   module Type
     CASTS = {
+      String => lambda { |value| String value },
       nil => lambda { |value| value }
     }
 

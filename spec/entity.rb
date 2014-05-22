@@ -12,6 +12,12 @@ class EntityWithDefault
   attribute :name, default: 'Apple'
 end
 
+class EntityWithType
+  prepend Ethos::Entity
+
+  attribute :name, type: String
+end
+
 subject Ethos::Entity
 
 scope '.new' do
@@ -63,6 +69,13 @@ scope '.attribute' do
 
     assert entity.name, :==, 1
     assert entity.name, :is_a?, Integer
+  end
+
+  spec 'creates an attribute with a given type' do
+    entity = EntityWithType.new name: 1
+
+    assert entity.name, :==, '1'
+    assert entity.name, :is_a?, String
   end
 end
 
