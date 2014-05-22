@@ -57,6 +57,13 @@ scope '.attribute' do
 
     assert entity.name, :==, 'Apple'
   end
+
+  spec 'creates an attribute with no given type' do
+    entity = Entity.new name: 1
+
+    assert entity.name, :==, 1
+    assert entity.name, :is_a?, Integer
+  end
 end
 
 scope '.attributes' do

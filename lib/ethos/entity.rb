@@ -1,12 +1,14 @@
+require 'ethos/type'
+
 module Ethos
   module Entity
     module ClassMethods
-      def attribute(attr, default: nil)
+      def attribute(attr, type: nil, default: nil)
         reader = :"#{attr}"
         writer = :"#{attr}="
 
         define_method reader do
-          attributes[attr]
+          Ethos::Type.cast attributes[attr], type
         end
 
         define_method writer do |value|
