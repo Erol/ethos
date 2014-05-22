@@ -1,7 +1,7 @@
 module Ethos
   module Entity
     module ClassMethods
-      def attribute(attr, options = {})
+      def attribute(attr, default: nil)
         reader = :"#{attr}"
         writer = :"#{attr}="
 
@@ -15,7 +15,7 @@ module Ethos
 
         attributes << attr
 
-        defaults[attr] = options[:default] if options[:default]
+        defaults[attr] = default if default
       end
 
       def attributes
