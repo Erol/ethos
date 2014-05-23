@@ -17,3 +17,7 @@ end
 Ethos::Type.define String do |value|
   String value
 end
+
+Ethos::Type.define Integer do |value|
+  Integer value
+end
