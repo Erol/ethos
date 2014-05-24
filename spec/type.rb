@@ -14,4 +14,11 @@ scope '.cast' do
 
     assert result, :==, expected
   end
+
+  spec 'casts a value to a Float' do
+    expected = Float 1
+    result = Ethos::Type.cast 1, Float
+
+    assert result, :==, expected
+  end
 end

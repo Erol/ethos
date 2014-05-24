@@ -21,3 +21,7 @@ end
 Ethos::Type.define Integer do |value|
   Integer value
 end
+
+Ethos::Type.define Float do |value|
+  Float value
+end
