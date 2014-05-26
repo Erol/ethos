@@ -21,4 +21,11 @@ scope '.cast' do
 
     assert result, :==, expected
   end
+
+  spec 'casts a value to a Hash' do
+    expected = Hash[:a, 1]
+    result = Ethos::Type.cast [:a, 1], Hash
+
+    assert result, :==, expected
+  end
 end
