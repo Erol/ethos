@@ -29,3 +29,7 @@ end
 Ethos::Type.define Hash do |values|
   Hash[*values]
 end
+
+Ethos::Type.define Array do |values|
+  Array[*values]
+end

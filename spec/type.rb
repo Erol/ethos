@@ -28,4 +28,11 @@ scope '.cast' do
 
     assert result, :==, expected
   end
+
+  spec 'casts a value to a Array' do
+    expected = Array[1, 2]
+    result = Ethos::Type.cast [1, 2], Array
+
+    assert result, :==, expected
+  end
 end
