@@ -3,7 +3,7 @@ require 'ethos/type'
 module Ethos
   module Entity
     module ClassMethods
-      def attribute(attr, type: nil, default: nil)
+      def attribute(attr, type, default: nil)
         reader = :"#{attr}"
         writer = :"#{attr}="
 

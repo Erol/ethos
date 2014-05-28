@@ -3,25 +3,13 @@ require 'ethos/entity'
 class Entity
   prepend Ethos::Entity
 
-  attribute :name
+  attribute :name, String
 end
 
 class EntityWithDefault
   prepend Ethos::Entity
 
-  attribute :name, default: 'Apple'
-end
-
-class EntityWithType
-  prepend Ethos::Entity
-
-  attribute :name, type: String
-end
-
-class EntityWithTypeAndDefault
-  prepend Ethos::Entity
-
-  attribute :name, type: String, default: 1
+  attribute :name, String, default: 'Apple'
 end
 
 subject Ethos::Entity
@@ -70,30 +58,23 @@ scope '.attribute' do
     assert entity.name, :==, 'Apple'
   end
 
-  spec 'creates an attribute with no given type' do
-    entity = Entity.new name: 1
-
-    assert entity.name, :==, 1
-    assert entity.name, :is_a?, Integer
-  end
-
   spec 'creates an attribute with a given type' do
-    entity = EntityWithType.new name: 1
+    entity = Entity.new name: 1
 
     assert entity.name, :==, '1'
     assert entity.name, :is_a?, String
   end
 
   spec 'creates an attribute with a given type and no default value' do
-    entity = EntityWithType.new
+    entity = Entity.new
 
     assert entity.name, :==, nil
   end
 
   spec 'creates an attribute with a given type and a default value' do
-    entity = EntityWithTypeAndDefault.new
+    entity = EntityWithDefault.new
 
-    assert entity.name, :==, '1'
+    assert entity.name, :==, 'Apple'
     assert entity.name, :is_a?, String
   end
 end
