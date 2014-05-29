@@ -6,12 +6,6 @@ class Entity
   attribute :name, String
 end
 
-class EntityWithDefault
-  prepend Ethos::Entity
-
-  attribute :name, String, default: 'Apple'
-end
-
 subject Ethos::Entity
 
 scope '.new' do
@@ -46,35 +40,10 @@ scope '.attribute' do
     assert entity.name, :==, 'Apple'
   end
 
-  spec 'creates an attribute with no default value' do
-    entity = Entity.new
-
-    assert entity.name, :nil?
-  end
-
-  spec 'creates an attribute with a default value' do
-    entity = EntityWithDefault.new
-
-    assert entity.name, :==, 'Apple'
-  end
-
   spec 'creates an attribute with a given type' do
     entity = Entity.new name: 1
 
     assert entity.name, :==, '1'
-    assert entity.name, :is_a?, String
-  end
-
-  spec 'creates an attribute with a given type and no default value' do
-    entity = Entity.new
-
-    assert entity.name, :==, nil
-  end
-
-  spec 'creates an attribute with a given type and a default value' do
-    entity = EntityWithDefault.new
-
-    assert entity.name, :==, 'Apple'
     assert entity.name, :is_a?, String
   end
 end
@@ -82,11 +51,5 @@ end
 scope '.attributes' do
   spec 'returns all defined attributes' do
     assert Entity.attributes, :include?, :name
-  end
-end
-
-scope '.defaults' do
-  spec 'returns all default attributes' do
-    assert EntityWithDefault.defaults, :==, {name: 'Apple'}
   end
 end
