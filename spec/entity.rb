@@ -19,7 +19,7 @@ scope '.new' do
     assert entity.attributes[:name], :==, 'Apple'
   end
 
-  spec 'does not assign non-existing attributes' do
+  spec 'ignore non-existing attributes' do
     entity = Entity.new none: 'None'
 
     refute entity.attributes[:none]
