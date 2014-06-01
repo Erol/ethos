@@ -35,3 +35,11 @@ scope '.attributes' do
     assert Entity.attributes, :include?, :name
   end
 end
+
+scope '#attributes' do
+  spec 'returns all attribute values' do
+    entity = Entity.new name: 'Apple'
+
+    assert entity.attributes, :==, name: 'Apple'
+  end
+end
