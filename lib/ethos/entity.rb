@@ -31,6 +31,8 @@ module Ethos
 
     def initialize(attributes = {})
       self.class.defaults.merge(attributes).each do |k, v|
+        v = v.call if v.is_a? Proc
+
         send :"#{k}=", v if respond_to? k
       end
 
