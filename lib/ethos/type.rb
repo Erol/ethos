@@ -9,6 +9,8 @@ module Ethos
     end
 
     def self.cast(value, type)
+      return value if value.is_a? type
+
       CASTS[type][value]
     end
   end
