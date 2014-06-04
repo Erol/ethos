@@ -6,7 +6,7 @@ class EntityWithDefaultValue
   attribute :name, String, default: 'Apple'
 end
 
-class EntityWithDefaultBlock
+class EntityWithDefaultProc
   prepend Ethos::Entity
 
   attribute :name, String, default: -> { 'Apple' }
@@ -21,8 +21,8 @@ scope '.attribute' do
     assert entity.name, :==, 'Apple'
   end
 
-  spec 'creates an attribute with a default block' do
-    entity = EntityWithDefaultBlock.new
+  spec 'creates an attribute with a default proc' do
+    entity = EntityWithDefaultProc.new
 
     assert entity.name, :==, 'Apple'
   end
