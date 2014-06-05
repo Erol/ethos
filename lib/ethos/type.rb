@@ -1,3 +1,5 @@
+require 'date'
+
 module Ethos
   module Type
     CASTS = {
@@ -26,6 +28,10 @@ end
 
 Ethos::Type.define Float do |value|
   Float value
+end
+
+Ethos::Type.define Date do |value|
+  Date.parse value
 end
 
 Ethos::Type.define Hash do |values|
