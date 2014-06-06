@@ -29,6 +29,13 @@ scope '.cast' do
     assert result, :==, expected
   end
 
+  spec 'casts a value to a Time' do
+    expected = Time.parse '2014-01-01 12:00AM'
+    result = Ethos::Type.cast '2014-01-01 12:00AM', Time
+
+    assert result, :==, expected
+  end
+
   spec 'casts a value to a Hash' do
     expected = Hash[:a, 1]
     result = Ethos::Type.cast [:a, 1], Hash

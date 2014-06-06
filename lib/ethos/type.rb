@@ -1,4 +1,5 @@
 require 'date'
+require 'time'
 
 module Ethos
   module Type
@@ -32,6 +33,10 @@ end
 
 Ethos::Type.define Date do |value|
   Date.parse value
+end
+
+Ethos::Type.define Time do |value|
+  Time.parse value
 end
 
 Ethos::Type.define Hash do |values|
