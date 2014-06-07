@@ -15,13 +15,14 @@ module Ethos
           attributes[attr] = value
         end
 
-        attributes << attr
+        attributes[attr] = {type: type}
+        attributes[attr][:default] = default if default
 
         defaults[attr] = default if default
       end
 
       def attributes
-        @_attributes ||= []
+        @_attributes ||= {}
       end
 
       def defaults

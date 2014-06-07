@@ -31,8 +31,8 @@ scope '.attribute' do
 end
 
 scope '.attributes' do
-  spec 'returns all defined attributes' do
-    assert Entity.attributes, :include?, :name
+  spec 'returns all attribute definitions' do
+    assert Entity.attributes, :==, name: {type: String}
   end
 end
 
