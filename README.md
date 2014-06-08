@@ -1,4 +1,4 @@
-# Specter
+# Ethos
 
 ## Contributing
 
