@@ -25,3 +25,4 @@ scope '.new' do
     refute entity.attributes[:none]
   end
 end
+

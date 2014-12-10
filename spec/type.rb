@@ -49,4 +49,11 @@ scope '.cast' do
 
     assert result, :==, expected
   end
+
+  spec 'casts a value to a BigDecimal' do
+    expected = BigDecimal.new '10.10'
+    result = Ethos::Type.cast 10.10, BigDecimal
+
+    assert result, :==, expected
+  end
 end

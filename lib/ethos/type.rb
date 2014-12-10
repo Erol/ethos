@@ -1,5 +1,6 @@
 require 'date'
 require 'time'
+require 'bigdecimal'
 
 module Ethos
   module Type
@@ -45,4 +46,8 @@ end
 
 Ethos::Type.define Array do |values|
   Array[*values]
+end
+
+Ethos::Type.define BigDecimal do |value|
+  BigDecimal.new String value
 end
