@@ -15,8 +15,18 @@ module Ethos
       @_current ||= {}
     end
 
+    def changed
+      @_changed ||= {}
+    end
+
     def set(key, value)
       current[key] = value
+
+      if initial[key] != value
+        changed[key] = value
+      else
+        changed.delete key
+      end
     end
 
     def get(key)
