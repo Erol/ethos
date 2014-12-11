@@ -28,9 +28,11 @@ module Ethos
         changed.delete key
       end
     end
+    alias :[]= :set
 
     def get(key)
       current[key]
     end
+    alias :[] :get
   end
 end
