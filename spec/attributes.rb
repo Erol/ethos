@@ -60,3 +60,13 @@ scope '#current' do
     assert attributes.current, :==, name: 'Banana'
   end
 end
+
+scope '#changed' do
+  spec 'returns changed attribute values' do
+    attributes = Ethos::Attributes.new a: 1, b: 2, c: 3
+    attributes.set :a, 2
+    attributes.set :b, 1
+
+    assert attributes.changed, :==, a: 2, b: 1
+  end
+end
