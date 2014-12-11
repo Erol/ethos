@@ -70,3 +70,30 @@ scope '#changed' do
     assert attributes.changed, :==, a: 2, b: 1
   end
 end
+
+scope '#[]=' do
+  spec 'skips the initial attribute value' do
+    attributes = Ethos::Attributes.new name: 'Apple'
+    attributes[:name] = 'Banana'
+
+    assert attributes.initial[:name], :==, 'Apple'
+  end
+
+  spec 'sets the current attribute value' do
+    attributes = Ethos::Attributes.new name: 'Apple'
+    attributes[:name] = 'Banana'
+
+    assert attributes.current[:name], :==, 'Banana'
+  end
+end
+
+scope '#[]' do
+  spec 'gets the current attribute value' do
+    attributes = Ethos::Attributes.new name: 'Apple'
+    attributes.set :name, 'Banana'
+
+    value = attributes[:name]
+
+    assert value, :==, 'Banana'
+  end
+end
