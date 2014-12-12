@@ -34,5 +34,19 @@ module Ethos
       current[key]
     end
     alias :[] :get
+
+    def ==(other)
+      if other.is_a? Ethos::Attributes
+        current == other.current
+      elsif other.is_a? Hash
+        current == other
+      else
+        raise TypeError, "#{other.class} can't be coerced into #{self.class}"
+      end
+    end
+
+    def coerce(other)
+      [self.class.new(other), self]
+    end
   end
 end
