@@ -1,4 +1,5 @@
 require 'ethos/type'
+require 'ethos/attributes'
 
 module Ethos
   module Entity
@@ -22,7 +23,7 @@ module Ethos
       end
 
       def attributes
-        @_attributes ||= {}
+        @_attributes ||= Ethos::Attributes.new
       end
 
       def defaults
