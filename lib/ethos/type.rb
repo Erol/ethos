@@ -40,6 +40,10 @@ Ethos::Type.define Time do |value|
   Time.parse value
 end
 
+Ethos::Type.define DateTime do |value|
+  DateTime.parse value
+end
+
 Ethos::Type.define Hash do |values|
   Hash[*values]
 end
