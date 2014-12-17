@@ -2,6 +2,8 @@
 
 # Ethos
 
+Entity library for Ruby
+
 ## Contributing
 
 1. Fork it
