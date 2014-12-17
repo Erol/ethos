@@ -1,6 +1,13 @@
 require 'ethos/type'
 
 scope '.cast' do
+  spec 'casts a value to a Symbol' do
+    expected = :Symbol
+    result = Ethos::Type.cast 'Symbol', Symbol
+
+    assert result, :==, expected
+  end
+
   spec 'casts a value to a String' do
     expected = String 1
     result = Ethos::Type.cast 1, String
