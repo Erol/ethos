@@ -20,6 +20,10 @@ module Ethos
   end
 end
 
+Ethos::Type.define Symbol do |value|
+  value.to_sym
+end
+
 Ethos::Type.define String do |value|
   String value
 end
