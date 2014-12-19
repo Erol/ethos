@@ -1,3 +1,5 @@
+[![Code Climate Score](http://img.shields.io/codeclimate/github/Erol/ethos.svg?style=flat)]
+
 # Ethos
 
 ## Contributing
