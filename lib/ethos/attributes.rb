@@ -16,17 +16,21 @@ module Ethos
     end
 
     def changed
-      @_changed ||= {}
+      return @_changed if defined? @_changed
+
+      @_changed = {}
+
+      (initial.keys | current.keys).each do |key|
+        @_changed[key] = current[key] if initial[key] != current[key]
+      end
+
+      @_changed
     end
 
     def set(key, value)
       current[key] = value
 
-      if initial[key] != value
-        changed[key] = value
-      else
-        changed.delete key
-      end
+      remove_instance_variable :@_changed if defined? @_changed
     end
     alias :[]= :set
 

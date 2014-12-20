@@ -64,10 +64,10 @@ end
 scope '#changed' do
   spec 'returns changed attribute values' do
     attributes = Ethos::Attributes.new a: 1, b: 2, c: 3
-    attributes.set :a, 2
-    attributes.set :b, 1
+    attributes.set :a, 5
+    attributes.set :d, 4
 
-    assert attributes.changed, :==, a: 2, b: 1
+    assert attributes.changed, :==, a: 5, d: 4
   end
 end
 
