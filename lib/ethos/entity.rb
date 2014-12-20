@@ -23,7 +23,7 @@ module Ethos
       end
 
       def attributes
-        @_attributes ||= Ethos::Attributes.new
+        @_attributes ||= {}
       end
 
       def defaults
@@ -42,7 +42,7 @@ module Ethos
     end
 
     def attributes
-      @_attributes ||= {}
+      @_attributes ||= Ethos::Attributes.new
     end
 
     def self.prepended(base)
