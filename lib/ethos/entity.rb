@@ -9,10 +9,14 @@ module Ethos
         writer = :"#{attr}="
 
         define_method reader do
-          attributes[attr] and Ethos::Type.cast attributes[attr], type
+          memoize attr do
+            attributes[attr] and Ethos::Type.cast attributes[attr], type
+          end
         end
 
         define_method writer do |value|
+          unmemoize attr
+
           attributes[attr] = value
         end
 
@@ -47,6 +51,22 @@ module Ethos
 
     def self.prepended(base)
       base.extend ClassMethods
+    end
+
+    private
+
+    def memoized
+      @_memoized ||= {}
+    end
+
+    def memoize(key)
+      return memoized[key] if memoized.include? key
+
+      memoized[key] = yield
+    end
+
+    def unmemoize(key)
+      memoized.delete key
     end
   end
 end
