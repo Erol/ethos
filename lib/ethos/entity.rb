@@ -49,6 +49,14 @@ module Ethos
       @_attributes ||= Ethos::Attributes.new
     end
 
+    def ==(other)
+      return false if self.class != other.class
+
+      self.class.attributes.keys.each do |key|
+        return false if self[key] != other[key]
+      end
+    end
+
     def self.prepended(base)
       base.extend ClassMethods
     end
