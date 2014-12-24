@@ -15,7 +15,7 @@ module Ethos
         end
 
         define_method writer do |value|
-          unmemoize attr
+          unmemoize attr if attributes[attr] != value
 
           attributes[attr] = value
         end
