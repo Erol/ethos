@@ -4,9 +4,7 @@ require 'bigdecimal'
 
 module Ethos
   module Type
-    CASTS = {
-      nil => lambda { |value| value }
-    }
+    CASTS = {}
 
     def self.define(type, &block)
       CASTS[type] = block
