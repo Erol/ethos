@@ -1,4 +1,5 @@
 require 'ethos/type'
+require 'ethos/entity'
 
 scope '.cast' do
   spec 'casts a value to a Symbol' do
@@ -69,5 +70,21 @@ scope '.cast' do
     result = Ethos::Type.cast 10.10, BigDecimal
 
     asserts(result) == expected
+  end
+
+  spec 'casts a hash of values to an Entity' do
+    class Entity
+      prepend Ethos::Entity
+
+      attribute :value, type: Float
+    end
+
+    values = {value: 1}
+
+    expected = Entity.new values
+    result = Ethos::Type.cast values, Entity
+
+    asserts(result).is_a? Entity
+    asserts(result.value) == expected.value
   end
 end

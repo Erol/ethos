@@ -13,7 +13,9 @@ module Ethos
     def self.cast(value, type)
       return value if value.is_a? type
 
-      CASTS[type][value]
+      return CASTS[type][value] if CASTS.key? type
+
+      type.new value
     end
   end
 end
