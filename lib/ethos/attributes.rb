@@ -30,6 +30,8 @@ module Ethos
     end
 
     def []=(key, value)
+      unmemoize key
+
       current[key] = value
     end
 
@@ -43,6 +45,10 @@ module Ethos
       memoized.fetch key do
         memoized[key] = yield
       end
+    end
+
+    def unmemoize(key)
+      memoized.delete key
     end
   end
 end
