@@ -87,4 +87,17 @@ scope '.cast' do
     asserts(result).is_a? Entity
     asserts(result.value) == expected.value
   end
+
+  spec 'casts a nil' do
+    class Entity
+      prepend Ethos::Entity
+
+      attribute :value, type: Float
+    end
+
+    expected = nil
+    result = Ethos::Type.cast nil, Entity
+
+    asserts(result) == expected
+  end
 end
