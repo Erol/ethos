@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Ethos::VERSION
   spec.authors       = ['Erol Fornoles']
   spec.email         = ['erol.fornoles@gmail.com']
-  spec.summary       = %q{Entity Library}
-  spec.description   = %q{Entity Library}
+  spec.summary       = %q{Lightweight entity library for Ruby}
+  spec.description   = %q{Lightweight entity library for Ruby}
   spec.homepage      = ''
   spec.license       = 'MIT'
 
