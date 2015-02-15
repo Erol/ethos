@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['erol.fornoles@gmail.com']
   spec.summary       = %q{Lightweight entity library for Ruby}
   spec.description   = %q{Lightweight entity library for Ruby}
-  spec.homepage      = ''
+  spec.homepage      = 'https://github.com/Erol/ethos'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0")
