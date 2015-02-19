@@ -1,0 +1,10 @@
+language: ruby
+rvm:
+  - 2.1.5
+  - 2.2.0
+env:
+  - CODECLIMATE_REPO_COVERAGE=true
+addons:
+  code_climate:
+    repo_token:
+      secure: "gu+A69oYmhfRWj3jDkqZBRw/iwbJ8sDqusuZ7uaotXtPOsn9tgAIFa/3LzTEFf3KZnnE4BkSAbphUmb7XhQrelDSXy2XEtlbBjuAdcKpRbHF7eGbOAsUFy7YjzYLNjuxYrtzBnOeEnldWzGMaueRrdlmF7Hg4MZgMYb6rLPNZzM=""
