@@ -2,6 +2,12 @@ require "bundler/gem_tasks"
 
 desc 'Run gem specs'
 task :spec do
+  if ENV['CODECLIMATE_REPO_COVERAGE']
+    require "codeclimate-test-reporter"
+
+    CodeClimate::TestReporter.start
+  end
+
   require 'microspec'
 
   runner = Microspec::Runner.new
