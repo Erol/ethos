@@ -14,7 +14,7 @@ module Ethos
       @_current ||= {}
     end
 
-    def initialize(schema:, values: {})
+    def initialize(schema, values: {})
       @_schema = schema
 
       values.each do |key, value|
