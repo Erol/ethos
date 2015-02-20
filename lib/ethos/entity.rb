@@ -8,8 +8,8 @@ module Ethos
         @_schema ||= Ethos::Schema.new
       end
 
-      def attribute(key, type:, default: nil)
-        schema.define key, type: type, default: default
+      def attribute(key, type, default: nil)
+        schema.define key, type, default: default
 
         reader = :"#{key}"
         writer = :"#{key}="
@@ -32,7 +32,7 @@ module Ethos
       schema = self.class.schema
       values = values.merge schema.defaults
 
-      @_attributes = Ethos::Attributes.new schema: schema, values: values
+      @_attributes = Ethos::Attributes.new schema, values: values
 
       super()
     end

@@ -5,7 +5,7 @@ scope do
     class Entity
       prepend Ethos::Entity
 
-      attribute :value, type: Integer
+      attribute :value, Integer
     end
   end
 
@@ -33,7 +33,7 @@ scope do
     class Entity
       prepend Ethos::Entity
 
-      attribute :value, type: Integer, default: 1
+      attribute :value, Integer, default: 1
     end
   end
 
@@ -49,7 +49,7 @@ scope do
     class Entity
       prepend Ethos::Entity
 
-      attribute :value, type: Integer, default: '1'
+      attribute :value, Integer, default: '1'
     end
   end
 
@@ -65,8 +65,8 @@ scope do
     class Entity
       prepend Ethos::Entity
 
-      attribute :name, type: String
-      attribute :parent, type: Entity
+      attribute :name, String
+      attribute :parent, Entity
     end
   end
 

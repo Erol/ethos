@@ -2,15 +2,9 @@ require 'ethos/schema'
 
 define schema: -> { Ethos::Schema.new }
 
-spec do
-  raises ArgumentError, 'missing keyword: type' do
-    schema.define :value
-  end
-end
-
 scope do
   setup do
-    schema.define :value, type: Integer
+    schema.define :value, Integer
   end
 
   spec do
@@ -24,7 +18,7 @@ end
 
 scope do
   setup do
-    schema.define :value, type: Integer, default: 1
+    schema.define :value, Integer, default: 1
   end
 
   spec do

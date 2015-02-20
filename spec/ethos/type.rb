@@ -76,7 +76,7 @@ scope '.cast' do
     class Entity
       prepend Ethos::Entity
 
-      attribute :value, type: Float
+      attribute :value, Float
     end
 
     values = {value: 1}
@@ -92,7 +92,7 @@ scope '.cast' do
     class Entity
       prepend Ethos::Entity
 
-      attribute :value, type: Float
+      attribute :value, Float
     end
 
     expected = nil
