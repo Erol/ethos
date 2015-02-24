@@ -1,4 +1,5 @@
 [![Code Climate Score](http://img.shields.io/codeclimate/github/Erol/ethos.svg?style=flat)](https://codeclimate.com/github/Erol/ethos)
+[![Test Coverage](https://codeclimate.com/github/Erol/ethos/badges/coverage.svg)](https://codeclimate.com/github/Erol/ethos)
 
 # Ethos
 
