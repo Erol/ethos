@@ -59,8 +59,10 @@ scope '.cast' do
   end
 
   spec 'casts a value to a Array' do
-    expected = Array[1, 2]
-    result = Ethos::Type.cast [1, 2], Array
+    values = {a: 1, b: 2}
+
+    expected = [[:a, 1], [:b, 2]]
+    result = Ethos::Type.cast values, Array
 
     asserts(result) == expected
   end
