@@ -52,7 +52,7 @@ scope '.cast' do
   end
 
   spec 'casts a value to a Hash' do
-    expected = Hash[:a, 1]
+    expected = {a: 1}
     result = Ethos::Type.cast [:a, 1], Hash
 
     asserts(result) == expected
