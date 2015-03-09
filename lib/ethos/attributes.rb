@@ -18,6 +18,8 @@ module Ethos
       @_schema = schema
 
       values.each do |key, value|
+        key = key.to_sym
+
         initial[key] = value
         current[key] = value
       end

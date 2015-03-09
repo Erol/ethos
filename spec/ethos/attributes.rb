@@ -39,4 +39,10 @@ scope do
 
     asserts(attributes[:value]) == 1
   end
+
+  spec do
+    attributes = Ethos::Attributes.new schema, values: {'value' => '1'}
+
+    asserts(attributes[:value]) == 1
+  end
 end
