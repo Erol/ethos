@@ -16,5 +16,9 @@ module Ethos
 
       defaults[key] = default if default
     end
+
+    def defined?(key)
+      attributes.key? key
+    end
   end
 end
