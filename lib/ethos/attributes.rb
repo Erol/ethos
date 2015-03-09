@@ -17,8 +17,15 @@ module Ethos
     def initialize(schema, values: {})
       @_schema = schema
 
+      schema.defaults.each do |key, value|
+        initial[key] = value
+        current[key] = value
+      end
+
       values.each do |key, value|
         key = key.to_sym
+
+        next unless schema.defined? key
 
         initial[key] = value
         current[key] = value

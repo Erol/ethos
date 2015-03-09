@@ -29,10 +29,7 @@ module Ethos
     end
 
     def initialize(values = {})
-      schema = self.class.schema
-      values = values.merge schema.defaults
-
-      @_attributes = Ethos::Attributes.new schema, values: values
+      @_attributes = Ethos::Attributes.new self.class.schema, values: values
 
       super()
     end
