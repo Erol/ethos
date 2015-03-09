@@ -42,6 +42,12 @@ scope do
 
     asserts(entity.value) == 1
   end
+
+  spec do
+    entity = Entity.new value: 2
+
+    asserts(entity.value) == 2
+  end
 end
 
 scope do
