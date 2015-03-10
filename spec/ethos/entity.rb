@@ -136,6 +136,33 @@ scope do
     class Entity
       prepend Ethos::Entity
 
+      attribute :name, String
+      collection :children, Entity
+    end
+  end
+
+  scope do
+    define entity: -> { Entity.new }
+
+    spec do
+      asserts(entity.children.size) == 0
+    end
+  end
+
+  scope do
+    define entity: -> { Entity.new children: [{name: 'Child'}] }
+
+    spec do
+      asserts(entity.children.size) == 1
+    end
+  end
+end
+
+scope do
+  setup do
+    class Entity
+      prepend Ethos::Entity
+
       attribute :value, Integer
     end
   end

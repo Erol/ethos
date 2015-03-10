@@ -11,5 +11,9 @@ module Ethos
     def initialize(values)
       @_values = values
     end
+
+    def size
+      @_values.size
+    end
   end
 end
