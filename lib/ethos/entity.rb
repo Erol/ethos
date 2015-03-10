@@ -37,5 +37,11 @@ module Ethos
     def attributes
       @_attributes
     end
+
+    def ==(other)
+      return false unless other.is_a? self.class
+
+      self.attributes == other.attributes
+    end
   end
 end

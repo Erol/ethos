@@ -46,3 +46,19 @@ scope do
     asserts(attributes[:value]) == 1
   end
 end
+
+scope do
+  spec do
+    this = Ethos::Attributes.new schema, values: {value: 1}
+    that = Ethos::Attributes.new schema, values: {value: 1}
+
+    asserts(this) == that
+  end
+
+  spec do
+    this = Ethos::Attributes.new schema, values: {value: 1}
+    that = Ethos::Attributes.new schema, values: {value: 2}
+
+    refutes(this) == that
+  end
+end

@@ -96,3 +96,27 @@ scope do
     end
   end
 end
+
+scope do
+  setup do
+    class Entity
+      prepend Ethos::Entity
+
+      attribute :value, Integer
+    end
+  end
+
+  spec do
+    this = Entity.new value: 1
+    that = Entity.new value: 1
+
+    asserts(this) == that
+  end
+
+  spec do
+    this = Entity.new value: 1
+    that = Entity.new value: 2
+
+    refutes(this) == that
+  end
+end

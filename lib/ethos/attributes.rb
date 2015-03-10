@@ -44,6 +44,14 @@ module Ethos
       current[key] = value
     end
 
+    def ==(other)
+      return false unless other.is_a? self.class
+
+      not schema.attributes.keys.any? do |key|
+        self[key] != other[key]
+      end
+    end
+
     private
 
     def memoized
