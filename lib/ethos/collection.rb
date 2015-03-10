@@ -7,5 +7,9 @@ module Ethos
     def self.type
       @_type
     end
+
+    def initialize(values)
+      @_values = values
+    end
   end
 end
