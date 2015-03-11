@@ -84,6 +84,12 @@ scope do
 
     asserts(entity.value).extended?
   end
+
+  spec do
+    entity = Entity.new value: '1'
+
+    asserts(entity.value).extended?
+  end
 end
 
 scope do
