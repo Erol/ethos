@@ -25,10 +25,9 @@ module Ethos
       end
 
       def collection(key, type)
-        klass = Class.new Ethos::Collection
-        klass.type = type
+        attribute key, Ethos::Collection, default: []
 
-        attribute key, klass, default: []
+        schema.attributes[key][:extensions].push Proc.new { self.type = type }
       end
     end
 

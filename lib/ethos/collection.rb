@@ -1,10 +1,10 @@
 module Ethos
   class Collection
-    def self.type=(type)
+    def type=(type)
       @_type = type
     end
 
-    def self.type
+    def type
       @_type
     end
 
