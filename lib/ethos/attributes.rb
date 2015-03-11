@@ -34,7 +34,13 @@ module Ethos
 
     def [](key)
       memoize key do
-        current[key] and Ethos::Type.cast current[key], schema.attributes[key][:type]
+        value = Ethos::Type.cast current[key], schema.attributes[key][:type]
+
+        schema.attributes[key][:extensions].each do |extension|
+          value.instance_eval &extension
+        end
+
+        value
       end
     end
 
