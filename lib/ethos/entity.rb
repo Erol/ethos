@@ -8,8 +8,8 @@ module Ethos
         @_schema ||= Ethos::Schema.new
       end
 
-      def attribute(key, type, default: nil)
-        schema.define key, type, default: default
+      def attribute(key, type, default: nil, &extension)
+        schema.define key, type, default: default, extensions: [extension].compact
 
         reader = :"#{key}"
         writer = :"#{key}="
