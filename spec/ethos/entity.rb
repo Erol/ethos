@@ -71,6 +71,26 @@ scope do
     class Entity
       prepend Ethos::Entity
 
+      attribute :value, String do
+        def extended?
+          true
+        end
+      end
+    end
+  end
+
+  spec do
+    entity = Entity.new
+
+    asserts(entity.value).extended?
+  end
+end
+
+scope do
+  setup do
+    class Entity
+      prepend Ethos::Entity
+
       attribute :name, String
       attribute :parent, Entity
     end
