@@ -22,13 +22,12 @@ module Ethos
         current[key] = value
       end
 
-      values.each do |key, value|
-        key = key.to_sym
-
-        next unless schema.defined? key
-
-        initial[key] = value
-        current[key] = value
+      schema.attributes.keys.each do |key|
+        if values.key? key
+          initial[key] = current[key] = values[key]
+        elsif values.key? String key
+          initial[key] = current[key] = values[String key]
+        end
       end
     end
 
