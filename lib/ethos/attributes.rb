@@ -18,8 +18,7 @@ module Ethos
       @_schema = schema
 
       schema.defaults.each do |key, value|
-        initial[key] = value
-        current[key] = value
+        initial[key] = current[key] = value
       end
 
       schema.attributes.keys.each do |key|
