@@ -150,10 +150,22 @@ scope do
   end
 
   scope do
-    define entity: -> { Entity.new children: [{name: 'Child'}] }
+    define entity: -> { Entity.new children: [{name: 'Child 1'}, {name: 'Child 2'}] }
 
     spec do
-      asserts(entity.children.size) == 1
+      asserts(entity.children.size) == 2
+    end
+
+    spec do
+      expected = Entity.new name: 'Child 1'
+
+      asserts(entity.children[0]) == expected
+    end
+
+    spec do
+      expected = Entity.new name: 'Child 2'
+
+      asserts(entity.children[1]) == expected
     end
   end
 end
