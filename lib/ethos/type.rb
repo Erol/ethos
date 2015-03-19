@@ -13,6 +13,8 @@ module Ethos
     def self.cast(value, type)
       return value if value.nil?
 
+      type = Module.const_get type if type.is_a? String
+
       return value if value.is_a? type
 
       return CASTS[type][value] if CASTS.key? type
