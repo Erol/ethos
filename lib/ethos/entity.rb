@@ -1,5 +1,6 @@
 require 'ethos/schema'
 require 'ethos/attributes'
+require 'ethos/collection'
 
 module Ethos
   module Entity
@@ -21,6 +22,12 @@ module Ethos
         define_method writer do |value|
           attributes[key] = value
         end
+      end
+
+      def collection(key, type)
+        attribute key, Ethos::Collection, default: []
+
+        schema.attributes[key][:extensions].push Proc.new { self.type = type }
       end
     end
 
