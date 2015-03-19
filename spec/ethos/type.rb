@@ -90,6 +90,13 @@ scope '.cast' do
     asserts(result.value) == expected.value
   end
 
+  spec 'casts to an instance of a type specified by a string' do
+    expected = 1.0
+    result = Ethos::Type.cast '1', 'Float'
+
+    asserts(result) == expected
+  end
+
   spec 'casts a nil' do
     class Entity
       prepend Ethos::Entity
