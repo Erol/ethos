@@ -22,6 +22,12 @@ module Ethos
       end
     end
 
+    def each
+      size.times do |i|
+        yield self[i]
+      end
+    end
+
     def ==(other)
       return false unless other.is_a? self.class
       return false unless self.size == other.size
