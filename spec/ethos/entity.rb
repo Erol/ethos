@@ -167,6 +167,16 @@ scope do
 
       asserts(entity.children[1]) == expected
     end
+
+    spec do
+      names = []
+
+      entity.children.each do |child|
+        names << child.name
+      end
+
+      asserts(names) == ['Child 1', 'Child 2']
+    end
   end
 end
 
