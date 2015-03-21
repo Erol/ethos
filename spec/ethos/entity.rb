@@ -126,7 +126,9 @@ scope do
     end
 
     spec do
-      asserts(entity.parent.name) == 'Parent'
+      parent = Entity.new name: 'Parent'
+
+      asserts(entity.parent) == parent
     end
   end
 end
