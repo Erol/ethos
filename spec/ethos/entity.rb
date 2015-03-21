@@ -165,9 +165,9 @@ scope do
     end
 
     spec do
-      expected = Entity.new name: 'Child 2'
+      child = Entity.new name: 'Child 2'
 
-      asserts(entity.children[1]) == expected
+      asserts(entity.children[1]) == child
     end
 
     spec do
