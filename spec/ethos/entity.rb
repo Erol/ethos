@@ -26,6 +26,13 @@ scope do
 
     asserts(entity.value) == 1
   end
+
+  spec do
+    entity = Entity.new
+    entity.attributes = {value: 1}
+
+    asserts(entity.value) == 1
+  end
 end
 
 scope do
