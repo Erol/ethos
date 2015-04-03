@@ -27,6 +27,26 @@ product.name            #=> "Apple"
 product.tags            #=> ["food", "fruit"]
 ```
 
+## Getting Started
+
+Add this line to your Gemfile:
+
+```ruby
+gem 'ethos'
+```
+
+And then run:
+
+```ruby
+$ bundle
+```
+
+Or install it yourself:
+
+```ruby
+$ gem install ethos
+```
+
 ## Contributing
 
 1. Fork it
