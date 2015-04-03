@@ -6,6 +6,27 @@
 
 A fast and simple entity library for Ruby.
 
+## Synopsis
+
+```ruby
+require 'ethos/entity'
+
+class Category
+  attribute :name, String
+end
+
+class Product
+  attribute :category, Category
+  attribute :name, String
+  collection :tags, String
+end
+
+product = Product.new category: {name: 'Fruits'}, name: 'Apple', tags: %w(food fruit)
+product.category.name   #=> "Fruits"
+product.name            #=> "Apple"
+product.tags            #=> ["food", "fruit"]
+```
+
 ## Contributing
 
 1. Fork it
