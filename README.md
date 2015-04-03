@@ -4,7 +4,7 @@
 
 # Ethos
 
-Entity library for Ruby
+A fast and simple entity library for Ruby.
 
 ## Contributing
 
