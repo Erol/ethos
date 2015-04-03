@@ -26,6 +26,13 @@ scope do
 
     asserts(entity.value) == 1
   end
+
+  spec do
+    entity = Entity.new
+    entity.attributes = {value: 1}
+
+    asserts(entity.value) == 1
+  end
 end
 
 scope do
@@ -47,6 +54,20 @@ scope do
     entity = Entity.new value: 2
 
     asserts(entity.value) == 2
+  end
+
+  spec do
+    entity = Entity.new
+    entity.attributes = {value: 2}
+
+    asserts(entity.value) == 2
+  end
+
+  spec do
+    entity = Entity.new
+    entity.attributes = {}
+
+    asserts(entity.value) == 1
   end
 end
 

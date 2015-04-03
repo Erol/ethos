@@ -36,9 +36,13 @@ module Ethos
     end
 
     def initialize(values = {})
-      @_attributes = Ethos::Attributes.new self.class.schema, values: values
+      self.attributes = values
 
       super()
+    end
+
+    def attributes=(values)
+      @_attributes = Ethos::Attributes.new self.class.schema, values: values
     end
 
     def attributes
