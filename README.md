@@ -12,10 +12,14 @@ A fast and simple entity library for Ruby.
 require 'ethos/entity'
 
 class Category
+  prepend Ethos::Entity
+
   attribute :name, String
 end
 
 class Product
+  prepend Ethos::Entity
+
   attribute :category, Category
   attribute :name, String
   collection :tags, String
