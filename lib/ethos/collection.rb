@@ -38,6 +38,10 @@ module Ethos
       array
     end
 
+    def join(separator = '')
+      self.map { |member| String member }.join separator
+    end
+
     def ==(other)
       return false unless other.is_a? self.class
       return false unless self.size == other.size

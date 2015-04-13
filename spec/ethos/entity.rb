@@ -214,6 +214,24 @@ scope do
     class Entity
       prepend Ethos::Entity
 
+      collection :tags, String
+    end
+  end
+
+  define entity: -> { Entity.new tags: %w[lorem ipsum dolor] }
+
+  spec do
+    tags = entity.tags.join(",")
+
+    asserts(tags) == 'lorem,ipsum,dolor'
+  end
+end
+
+scope do
+  setup do
+    class Entity
+      prepend Ethos::Entity
+
       attribute :value, Integer
     end
   end
