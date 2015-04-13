@@ -28,6 +28,16 @@ module Ethos
       end
     end
 
+    def map
+      array = []
+
+      self.each do |member|
+        array << yield(member)
+      end
+
+      array
+    end
+
     def ==(other)
       return false unless other.is_a? self.class
       return false unless self.size == other.size

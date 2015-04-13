@@ -200,6 +200,12 @@ scope do
 
       asserts(names) == ['Child 1', 'Child 2']
     end
+
+    spec do
+      names = entity.children.map do |child| child.name end
+
+      asserts(names) == ['Child 1', 'Child 2']
+    end
   end
 end
 
