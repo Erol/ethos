@@ -200,6 +200,30 @@ scope do
 
       asserts(names) == ['Child 1', 'Child 2']
     end
+
+    spec do
+      names = entity.children.map do |child| child.name end
+
+      asserts(names) == ['Child 1', 'Child 2']
+    end
+  end
+end
+
+scope do
+  setup do
+    class Entity
+      prepend Ethos::Entity
+
+      collection :tags, String
+    end
+  end
+
+  define entity: -> { Entity.new tags: %w[lorem ipsum dolor] }
+
+  spec do
+    tags = entity.tags.join(",")
+
+    asserts(tags) == 'lorem,ipsum,dolor'
   end
 end
 
