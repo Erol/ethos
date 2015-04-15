@@ -10,7 +10,19 @@ scope '.cast' do
     end
 
     spec do
+      result = Ethos::Type.cast 1, Ethos::Types::Boolean
+
+      asserts(result).truthy?
+    end
+
+    spec do
       result = Ethos::Type.cast false, Ethos::Types::Boolean
+
+      asserts(result).falsey?
+    end
+
+    spec do
+      result = Ethos::Type.cast nil, Ethos::Types::Boolean
 
       asserts(result).falsey?
     end
