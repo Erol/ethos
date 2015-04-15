@@ -2,6 +2,20 @@ require 'ethos/type'
 require 'ethos/entity'
 
 scope '.cast' do
+  scope 'casts a value to a Ethos::Types::Boolean' do
+    spec do
+      result = Ethos::Type.cast true, Ethos::Types::Boolean
+
+      asserts(result).truthy?
+    end
+
+    spec do
+      result = Ethos::Type.cast false, Ethos::Types::Boolean
+
+      asserts(result).falsey?
+    end
+  end
+
   spec 'casts a value to a Symbol' do
     expected = :Symbol
     result = Ethos::Type.cast 'Symbol', Symbol

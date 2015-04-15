@@ -2,6 +2,8 @@ require 'date'
 require 'time'
 require 'bigdecimal'
 
+require 'ethos/types/boolean'
+
 module Ethos
   module Type
     CASTS = {}
@@ -22,6 +24,10 @@ module Ethos
       type.new value
     end
   end
+end
+
+Ethos::Type.define Ethos::Types::Boolean do |value|
+  value ? true : false
 end
 
 Ethos::Type.define Symbol do |value|
