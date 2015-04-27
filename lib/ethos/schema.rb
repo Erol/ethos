@@ -4,6 +4,10 @@ module Ethos
       @_attributes ||= {}
     end
 
+    def keys
+      attributes.keys
+    end
+
     def defaults
       @_defaults ||= {}
     end

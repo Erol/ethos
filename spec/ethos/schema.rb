@@ -29,3 +29,15 @@ scope do
     asserts(schema.defaults).key? :value
   end
 end
+
+scope do
+  setup do
+    schema.define :a, Integer
+    schema.define :b, Integer
+    schema.define :c, Integer
+  end
+
+  spec do
+    asserts(schema.keys) == %i[a b c]
+  end
+end
