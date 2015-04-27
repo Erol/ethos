@@ -8,7 +8,7 @@ scope do
   end
 
   spec do
-    asserts(schema.attributes[:value]) == {type: Integer, default: nil, extensions: []}
+    asserts(schema.attributes[:value]) == {type: Integer, default: nil, nothing: nil, extensions: []}
   end
 
   spec do
@@ -22,7 +22,7 @@ scope do
   end
 
   spec do
-    asserts(schema.attributes[:value]) == {type: Integer, default: 1, extensions: []}
+    asserts(schema.attributes[:value]) == {type: Integer, default: 1, nothing: nil, extensions: []}
   end
 
   spec do

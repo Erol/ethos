@@ -8,10 +8,11 @@ module Ethos
       @_defaults ||= {}
     end
 
-    def define(key, type, default: nil, extensions: [])
+    def define(key, type, default: nil, nothing: nil, extensions: [])
       attributes[key] = {
         type: type,
         default: default,
+        nothing: nothing,
         extensions: extensions
       }
 
