@@ -31,6 +31,10 @@ module Ethos
       end
     end
 
+    def self.included(base)
+      base.extend ClassMethods
+    end
+
     def self.prepended(base)
       base.extend ClassMethods
     end
