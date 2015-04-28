@@ -14,7 +14,7 @@ module Ethos
       @_schema = schema
 
       schema.defaults.each do |key, value|
-        current[key] = value
+        current[key] = value.is_a?(Proc) ? value.call : value
       end
 
       schema.attributes.keys.each do |key|
