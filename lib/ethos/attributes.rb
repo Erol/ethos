@@ -6,10 +6,6 @@ module Ethos
       @_schema
     end
 
-    def initial
-      @_initial ||= {}
-    end
-
     def current
       @_current ||= {}
     end
@@ -18,14 +14,14 @@ module Ethos
       @_schema = schema
 
       schema.defaults.each do |key, value|
-        initial[key] = current[key] = value
+        current[key] = value
       end
 
       schema.attributes.keys.each do |key|
         if values.key? key
-          initial[key] = current[key] = values[key]
+          current[key] = values[key]
         elsif values.key? String key
-          initial[key] = current[key] = values[String key]
+          current[key] = values[String key]
         end
       end
     end
