@@ -1,3 +1,3 @@
 module Ethos
-  VERSION = '0.2.0.beta14'
+  VERSION = '0.2.0.beta15'
 end
