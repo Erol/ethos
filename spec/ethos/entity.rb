@@ -250,6 +250,12 @@ scope do
 
       asserts(names) == ['Child 1', 'Child 2']
     end
+
+    spec do
+      result = entity.children.any? do |child| child.name == 'Child 1' end
+
+      asserts(result).truthy?
+    end
   end
 end
 
