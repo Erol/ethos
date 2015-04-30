@@ -1,5 +1,7 @@
 module Ethos
   class Collection
+    include Enumerable
+
     def type=(type)
       @_type = type
     end
@@ -26,16 +28,6 @@ module Ethos
       size.times do |i|
         yield self[i]
       end
-    end
-
-    def map
-      array = []
-
-      self.each do |member|
-        array << yield(member)
-      end
-
-      array
     end
 
     def join(separator = '')
