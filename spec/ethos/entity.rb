@@ -104,6 +104,34 @@ scope do
     class Entity
       prepend Ethos::Entity
 
+      attribute :value, Integer, nothing: -> { 1 }
+    end
+  end
+
+  spec do
+    entity = Entity.new
+
+    asserts(entity.value) == 1
+  end
+
+  spec do
+    entity = Entity.new value: nil
+
+    asserts(entity.value) == 1
+  end
+
+  spec do
+    entity = Entity.new value: 2
+
+    asserts(entity.value) == 2
+  end
+end
+
+scope do
+  setup do
+    class Entity
+      prepend Ethos::Entity
+
       attribute :value, Integer, default: -> { 1 }
     end
   end

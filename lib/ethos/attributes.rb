@@ -31,7 +31,12 @@ module Ethos
         type = schema.attributes[key][:type]
 
         raw = current[key]
-        raw = schema.attributes[key][:nothing] if raw.nil?
+
+        if raw.nil?
+          nothing = schema.attributes[key][:nothing]
+
+          raw = nothing.is_a?(Proc) ? nothing.call : nothing
+        end
 
         value = Ethos::Type.cast raw, type
 
