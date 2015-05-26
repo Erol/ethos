@@ -4,7 +4,7 @@
 
 # Ethos
 
-Entity library for Ruby
+Ethos allows you to define attributes and collections on Ruby objects with options to specify type coercion and optional behavior. Though it is functionally similar to [Virtus](https://github.com/solnic/virtus), Ethos aims to be on par with the performance of [FastAttributes](https://github.com/applift/fast_attributes) in most use cases.
 
 ## Contributing
 
