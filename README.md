@@ -25,6 +25,20 @@ Attrio: without values                                :    10471.6 i/s - 235.36x
 Virtus: string values for integer attributes          :     4299.1 i/s - 573.29x slower
 ```
 
+## Installation
+
+Add this line to your application's Gemfile:
+
+    gem 'ethos'
+
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install ethos
+
 ## Contributing
 
 1. Fork it
