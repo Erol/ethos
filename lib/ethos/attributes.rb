@@ -28,19 +28,20 @@ module Ethos
 
     def [](key)
       memoize key do
-        type = schema.attributes[key][:type]
+        scheme = schema.attributes[key]
+        value = current[key]
 
-        raw = current[key]
+        type = scheme[:type]
 
-        if raw.nil?
-          nothing = schema.attributes[key][:nothing]
+        if value.nil?
+          nothing = scheme[:nothing]
 
-          raw = nothing.is_a?(Proc) ? nothing.call : nothing
+          value = nothing.is_a?(Proc) ? nothing.call : nothing
         end
 
-        value = Ethos::Type.cast raw, type
+        value = Ethos::Type.cast value, type
 
-        schema.attributes[key][:extensions].each do |extension|
+        scheme[:extensions].each do |extension|
           value.instance_eval &extension
         end
 
