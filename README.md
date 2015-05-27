@@ -39,6 +39,29 @@ Or install it yourself as:
 
     $ gem install ethos
 
+## Usage
+
+You can create an entity class and define attributes with type coercions:
+
+``` ruby
+class Person
+  include Ethos::Entity
+
+  attribute :name, String
+  attribute :birthdate, Date
+end
+
+person = Person.new
+
+person.name = 'Ruby'
+person.name.class #=> String
+person.name #=> "Ruby"
+
+person.birthdate = '1990-01-01'
+person.birthdate.class #=> Date
+person.birthdate #=> #<Date: 1990-01-01 ((2447893j,0s,0n),+0s,2299161j)>
+```
+
 ## Contributing
 
 1. Fork it
