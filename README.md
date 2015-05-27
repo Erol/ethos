@@ -11,18 +11,18 @@ Ethos allows you to define attributes and collections on Ruby objects with optio
 This is the performance comparison of Ethos with other popular gems: 
 
 ```
-FastAttributes: without values                        :  2464641.1 i/s
-FastAttributes: integer values for integer attributes :   119475.3 i/s - 20.63x slower
-Ethos: without values                                 :   117166.5 i/s - 21.04x slower
-FastAttributes: string values for integer attributes  :   104466.0 i/s - 23.59x slower
-Ethos: integer values for integer attributes          :   101240.4 i/s - 24.34x slower
-Ethos: string values for integer attributes           :    93084.0 i/s - 26.48x slower
-Virtus: integer values for integer attributes         :    30740.4 i/s - 80.18x slower
-Attrio: integer values for integer attributes         :    15532.0 i/s - 158.68x slower
-Virtus: without values                                :    14978.0 i/s - 164.55x slower
-Attrio: string values for integer attributes          :    14496.8 i/s - 170.01x slower
-Attrio: without values                                :    10471.6 i/s - 235.36x slower
-Virtus: string values for integer attributes          :     4299.1 i/s - 573.29x slower
+FastAttributes: without values                         :  2464641.1 i/s
+FastAttributes: integer values for integer attributes  :   119475.3 i/s - 20.63x slower
+Ethos: without values                                  :   117166.5 i/s - 21.04x slower
+FastAttributes: string values for integer attributes   :   104466.0 i/s - 23.59x slower
+Ethos: integer values for integer attributes           :   101240.4 i/s - 24.34x slower
+Ethos: string values for integer attributes            :    93084.0 i/s - 26.48x slower
+Virtus: integer values for integer attributes          :    30740.4 i/s - 80.18x slower
+Attrio: integer values for integer attributes          :    15532.0 i/s - 158.68x slower
+Virtus: without values                                 :    14978.0 i/s - 164.55x slower
+Attrio: string values for integer attributes           :    14496.8 i/s - 170.01x slower
+Attrio: without values                                 :    10471.6 i/s - 235.36x slower
+Virtus: string values for integer attributes           :     4299.1 i/s - 573.29x slower
 ```
 
 ## Installation
